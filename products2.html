@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>SYNIM Remedies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet">
+    <link href="./css/template.css" rel="stylesheet">
+
+    <!--[if IE 8]>
+      <link href="css/ie8.css?v=1.1" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./lib/jquery.min.js"></script>
+    <script src="./lib/bootstrap.min.js"></script>
+    <style type="text/css">
+  
+        @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+          body {
+        font-family: Roboto, sans-serif;
+    }
+    .bg-peter-river, .navbar .navbar-inner, .navbar-dark .navbar-inner, .ui-slider-horizontal .ui-slider-handle {
+    background: #c9d8c5; /*#c5d5cb
+#b3c2bf
+#c9d8c5
+#a8b6bf 
+#c9c9c9
+#bccbde
+#c2dde6 */
+}
+        .container.rel{
+            position: relative;
+        }
+     .container.rel h1   {
+    position: absolute;
+    color: #fff;
+    font-size: 14px;
+    font-style: italic;
+    left: 122px;
+    top: 31px;
+    font-family: Roboto, sans-serif;
+}
+        .navbar-brand{
+                margin-top: -40px!important;
+        }
+        .container {
+            padding: 15px!important;
+        }
+        .category-list{
+            margin-top:10px;
+            display: none;
+            background: none;
+        }
+        .category-list .row{
+            margin-bottom: 15px;
+        }
+        .col-item {
+            border: 1px solid #E1E1E1;
+            border-radius: 5px;
+            background: #FFF;
+        }
+
+        .col-item .photo img {
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .col-item .info {
+            padding: 10px;
+            border-radius: 0 0 5px 5px;
+            margin-top: 1px;
+        }
+
+        .col-item:hover .info {
+            background-color: #F5F5DC;
+        }
+
+        .col-item .price {
+            /*width: 50%;*/
+            float: left;
+            margin-top: 5px;
+        }
+
+        .col-item .price h5 {
+            line-height: 20px;
+            margin: 0;
+            color: #000;
+        }
+
+        a.hidden-sm {
+            color: #219fd1;
+        }
+
+        .price-text-color {
+            color: #219FD1;
+        }
+
+        .col-item .info .rating {
+            color: #777;
+        }
+
+        .col-item .rating {
+            /*width: 50%;*/
+            float: left;
+            font-size: 17px;
+            text-align: right;
+            line-height: 52px;
+            margin-bottom: 10px;
+            height: 52px;
+        }
+
+        .col-item .separator {
+            border-top: 1px solid #E1E1E1;
+        }
+
+        .clear-left {
+            clear: left;
+        }
+
+        .col-item .separator p {
+            line-height: 20px;
+            margin-bottom: 0;
+            margin-top: 10px;
+            color: #000;
+        }
+
+        .col-item .separator p i {
+            margin-right: 5px;
+        }
+
+        .col-item .btn-add {
+            width: 50%;
+            float: left;
+        }
+
+        .col-item .btn-add {
+            border-right: 1px solid #E1E1E1;
+        }
+
+        .col-item .btn-details {
+            width: 50%;
+            float: left;
+            padding-left: 10px;
+        }
+
+        .controls {
+            margin-top: 20px;
+        }
+
+        [data-slide="prev"] {
+            margin-right: 10px;
+        }
+        button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+}
+button.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+    </style>
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="60">
+    <!-- header Starts -->
+    <nav class="navbar navbar-fixed-top navbar-dark bg-faded">
+        <div class="navbar-inner bg">
+            <div class="container rel">
+                <h1>A promise for well being</h1>
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="fa fa-bars"></span>
+                </a>
+                <a href="#" class="navbar-brand">
+                    <img src="./images/logo_new_1.jpg">
+                </a>
+                <div class="nav-collapse">
+                    <ul class="nav navbar-nav pull-right" id="navbar-links">
+                        <li class="nav-item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="overview.html">Overview </a>
+                        </li>
+                        <li class="active nav-item">
+                            <a href="products.html">Products</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="patients-education.html">Patients Education</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- header Ends -->
+
+    <!-- Body Starts -->
+    <div class="homepage contentWrapper">
+        <!-- -->
+
+        <!-- -->
+        <div class="clearfix">
+            <div class="container-fluid bg bg-peter-river inverse">
+                <div class="container products">
+                    <h1>PRODUCT PORTFOLIO</h1>
+                    <div class="small-text italic">
+                        <p> We are having wide range of products in Orotho, Dermotology, Gastro and General specialities</p>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3>&nbsp;</h3>
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- Controls -->
+                                    <div class="controls pull-right hidden-xs">
+                                        <a class="left fa fa-chevron-left btn btn-primary" href="#carousel-example-generic" data-slide="prev"></a>
+                                        <a
+                                            class="right fa fa-chevron-right btn btn-primary" href="#carousel-example-generic"
+                                            data-slide="next"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel" data-interval="10000">
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="col-item">
+                                                    <div class="photo">
+                                                        <img src="./images/default-img.jpg" class="img-responsive" alt="a" />
+                                                    </div>
+                                                    <div class="info">
+                                                        <div class="row">
+                                                            <div class="price col-md-6">
+                                                                <h5>NSAID's</h5>
+                                                                <h5 class="price-text-color">Description goes here</h5>
+                                                            </div>
+                                                            <div class="rating hidden-sm col-md-6">
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="separator clear-left">
+
+                                                            <p class="btn-details">
+                                                                <i class="fa fa-list"></i>
+                                                                <a href="javascript:void(0)" onclick="showProductDetails(1)" class="hidden-sm">More details</a></p>
+                                                        </div>
+                                                        <div class="clearfix">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="col-item">
+                                                    <div class="photo">
+                                                        <img src="./images/default-img.jpg" class="img-responsive" alt="a" />
+                                                    </div>
+                                                    <div class="info">
+                                                        <div class="row">
+                                                            <div class="price col-md-6">
+                                                                <h5>
+                                                                    Product Example</h5>
+                                                                <h5 class="price-text-color">Description goes here</h5>
+                                                            </div>
+                                                            <div class="rating hidden-sm col-md-6">
+                                                            </div>
+                                                        </div>
+                                                        <div class="separator clear-left">
+
+                                                            <p class="btn-details">
+                                                                <i class="fa fa-list"></i>
+                                                                <a href="javascript:void(0)" onclick="showProductDetails(1)" class="hidden-sm">More details</a></p>
+                                                        </div>
+                                                        <div class="clearfix">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="col-item">
+                                                    <div class="photo">
+                                                        <img src="./images/default-img.jpg" class="img-responsive" alt="a" />
+                                                    </div>
+                                                    <div class="info">
+                                                        <div class="row">
+                                                            <div class="price col-md-6">
+                                                                <h5>
+                                                                    Next Sample Product</h5>
+                                                                <h5 class="price-text-color">Description goes here</h5>
+                                                            </div>
+                                                            <div class="rating hidden-sm col-md-6"> </div>
+                                                        </div>
+                                                        <div class="separator clear-left">
+                                                            <p class="btn-details"><i class="fa fa-list"></i>
+                                                                <a href="javascript:void(0)" onclick="showProductDetails(1)"  class="hidden-sm">More details</a>
+                                                            </p>
+                                                        </div>
+                                                        <div class="clearfix">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="col-item">
+                                                    <div class="photo">
+                                                        <img src="./images/default-img.jpg" class="img-responsive" alt="a" />
+                                                    </div>
+                                                    <div class="info">
+                                                        <div class="row">
+                                                            <div class="price col-md-6">
+                                                                <h5>
+                                                                    Product with Variants</h5>
+                                                                <h5 class="price-text-color">Description goes here</h5>
+                                                            </div>
+                                                            <div class="rating hidden-sm col-md-6">
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="separator clear-left">
+
+                                                            <p class="btn-details">
+                                                                <i class="fa fa-list"></i>
+                                                                <a href="javascript:void(0)" onclick="showProductDetails(2)"  class="hidden-sm">More details</a></p>
+                                                        </div>
+                                                        <div class="clearfix">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <!-- Product Details Starts -->
+                        <div class="category-list products-list-1">
+                            <h3>NSAID Products</h3>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="./images/default-img.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-9">
+                                                        <h5>Synace-P</h5>
+                                                        <h5 class="price-text-color">199.99 (pack of 10)</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="./images/default-img.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-9">
+                                                        <h5>Synace- SP</h5>
+                                                        <h5 class="price-text-color">199.99 (pack of 10)</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="./images/default-img.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-9">
+                                                        <h5>Synace-TH</h5>
+                                                        <h5 class="price-text-color">199.99 (pack of 10)</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="./images/default-img.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-9">
+                                                        <h5>Synace Gel</h5>
+                                                        <h5 class="price-text-color">199.99 (pack of 10)</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="./images/default-img.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-9">
+                                                        <h5>Sydol-P</h5>
+                                                        <h5 class="price-text-color">199.99 (pack of 10)</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="./images/default-img.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-9">
+                                                        <h5>T bru- D</h5>
+                                                        <h5 class="price-text-color">199.99 (pack of 10)</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product Details Ends -->
+                        <!-- -->
+                        <div style="margin:20px 0; width:485px">
+                        <button class="accordion">NSAID's</button>
+<div class="panel">
+  <p><div class="">
+                            <h3>NSAID Products</h3>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="./images/default-img.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-9">
+                                                        <h5>Synace-P</h5>
+                                                        <h5 class="price-text-color">199.99 (pack of 10)</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="./images/default-img.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-9">
+                                                        <h5>Synace- SP</h5>
+                                                        <h5 class="price-text-color">199.99 (pack of 10)</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="./images/default-img.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-9">
+                                                        <h5>Synace-TH</h5>
+                                                        <h5 class="price-text-color">199.99 (pack of 10)</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="./images/default-img.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-9">
+                                                        <h5>Synace Gel</h5>
+                                                        <h5 class="price-text-color">199.99 (pack of 10)</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="./images/default-img.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-9">
+                                                        <h5>Sydol-P</h5>
+                                                        <h5 class="price-text-color">199.99 (pack of 10)</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="./images/default-img.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-9">
+                                                        <h5>T bru- D</h5>
+                                                        <h5 class="price-text-color">199.99 (pack of 10)</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div></p>
+</div>
+
+<button class="accordion">Antibiotics</button>
+<div class="panel">
+  <p>Cefinim - LB
+Sympod 200mg
+Sympod CV</p>
+</div>
+
+<button class="accordion">Anti Allergic</button>
+<div class="panel">
+  <p>Sycet- L
+Sycet-LM
+Niltus- DM (cough specialist)</p>
+</div>
+                        </div>
+                        <!-- -->
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Body Ends -->
+
+    <!-- footer Starts -->
+    <div class="bg bg-clouds footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="nav-item"><a href="">About</a></li>
+                        <li class="nav-item"><a href="">Company Visiion</a></li>
+                        <li class="nav-item"><a href="">Our Team</a></li>
+                        <li class="nav-item"><a href="">Products</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            &nbsp;
+                        </div>
+                        <div class="col-sm-6" id="contact">
+                            <div class="bg-transperent row">
+                                <div class="pad">
+                                    <h3>SYNIM</h3>
+                                    <div class="pull-left">
+                                        <address class="small">
+                                            Synim Remedies Private Limited<br> D No:2-4-600, Road No:9/A<br> RK Puram, Hyderabad-500074
+                                        </address>
+                                    </div>
+                                    <div class="pull-right"><a href=""><img src="./images/address-img.jpg" width="80" alt="Map Image"></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    <!-- footer Ends -->
+
+    <script src="./js/products.js"></script>
+    <script type="text/javascript">
+    var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active");
+
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    }
+}
+
+ </script>
+
+</body>
+
+</html>
